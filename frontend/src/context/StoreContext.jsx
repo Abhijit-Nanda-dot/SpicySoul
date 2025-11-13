@@ -4,7 +4,10 @@ import { StoreContext, defaultContextValue } from './store';
 
 export const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState([]);
-    const url ="http://localhost:4000";
+    // const devUrl ="http://localhost:4000";
+    const url ="https://spicysoul.onrender.com";
+   
+
     const [token,setToken] = useState("");
     const[food_list,setFoodList] =useState([])
 
