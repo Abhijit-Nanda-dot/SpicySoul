@@ -15,7 +15,14 @@ const port = 4000 || process.env.PORT ;
 
 
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {origin:[
+        "https://spicy-soul-admin.vercel.app/",
+        "https://spicy-soul.vercel.app/",
+        "http://localhost:5173",
+        "http://localhost:5174"
+    ]}
+))
 
 // Debug middleware to log all incoming requests (before routes)
 app.use((req, res, next) => {
