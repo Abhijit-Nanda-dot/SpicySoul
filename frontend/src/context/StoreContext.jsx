@@ -19,15 +19,17 @@ export const StoreContextProvider = (props) => {
             if(action === 'add'){
                 await axios.post(`${url}/api/cart/add`, { itemId }, {
                     headers: { token }
-                });
+                },{ withCredentials: true })
+                
+                ;
             } else if(action === 'remove'){
                 await axios.post(`${url}/api/cart/remove`, { itemId }, {
                     headers: { token }
-                });
+                },{ withCredentials: true });
             } else if(action === 'remove-all'){
                 await axios.post(`${url}/api/cart/remove-all`, { itemId }, {
                     headers: { token }
-                });
+                },{ withCredentials: true });
             }
         } catch (error) {
             console.error("Error syncing cart to database:", error);
@@ -44,7 +46,7 @@ export const StoreContextProvider = (props) => {
         try {
             const response = await axios.post(`${url}/api/cart/get`, {}, {
                 headers: { token }
-            });
+            },{ withCredentials: true });
             
             if(response.data.success && response.data.cartData){
                 // Convert cartData object to array format
@@ -136,7 +138,7 @@ export const StoreContextProvider = (props) => {
 
     const fetchFoodList = async()=>{
         try {
-            const response = await axios.get(url+"/api/food/list");
+            const response = await axios.get(url+"/api/food/list",{ withCredentials: true });
             if(response.data.success && response.data.data && response.data.data.length > 0){
                 setFoodList(response.data.data);
             } else {
