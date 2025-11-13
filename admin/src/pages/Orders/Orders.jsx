@@ -17,7 +17,7 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true)
-      const response = await axios.get(`${url}/api/order/all`)
+      const response = await axios.get(`${url}/api/order/all`,{ withCredentials: true })
       if (response.data.success) {
         setOrders(response.data.orders)
       } else {
@@ -33,7 +33,7 @@ const Orders = () => {
 
   const updateOrderStatus = async (orderId, status) => {
     try {
-      const response = await axios.put(`${url}/api/order/update-status/${orderId}`, { status })
+      const response = await axios.put(`${url}/api/order/update-status/${orderId}`, { status },{ withCredentials: true })
       if (response.data.success) {
         toast.success('Order status updated successfully')
         fetchOrders()
