@@ -15,7 +15,7 @@ const port = 4000 || process.env.PORT ;
 
 
 app.use(express.json())
-const cors = require('cors');
+
 
 app.use(cors({
   origin: [
@@ -26,7 +26,7 @@ app.use(cors({
   ],
   withCredentials: true
 }));
-app.use(express.urlencoded({ extended: true }
+
 
 // Debug middleware to log all incoming requests (before routes)
 app.use((req, res, next) => {
