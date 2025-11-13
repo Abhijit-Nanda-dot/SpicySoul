@@ -4,7 +4,7 @@ import { StoreContext, defaultContextValue } from './store';
 
 export const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState([]);
-    // const devUrl ="http://localhost:4000";
+    // const devUrl ="https://spicysoul.onrender.com";
     const url ="https://spicysoul.onrender.com";
    
 
