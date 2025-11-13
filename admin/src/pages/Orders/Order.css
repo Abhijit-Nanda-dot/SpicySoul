@@ -1,0 +1,236 @@
+.orders-container {
+  width: 90%;
+  margin: 30px auto;
+  color: #262626;
+}
+
+.orders-container h1 {
+  margin-bottom: 20px;
+  color: black;
+  font-weight: 500;
+}
+
+.loading, .no-orders {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.orders-content {
+  display: flex;
+  gap: 20px;
+}
+
+.orders-list {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.orders-list-header {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr 0.7fr 0.8fr 1fr;
+  background-color: #e7c371; /* main admin accent */
+  color: #262626;
+  padding: 12px 16px;
+  font-weight: 500;
+}
+
+.orders-list-header p {
+  margin: 0;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr 0.7fr 0.8fr 1fr;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.order-item:hover {
+  background-color: #f5f5f5;
+}
+
+.order-item.selected {
+  background-color: #d6b35a; /* slightly darker than accent */
+  color: #262626;
+}
+
+.order-item p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-id {
+  font-family: monospace;
+  font-weight: 500;
+}
+
+.order-status {
+  font-weight: 500;
+}
+
+.order-actions select {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+}
+
+.order-details {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-details h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: 500;
+}
+
+.order-details h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.order-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.order-info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.order-info-item span:first-child {
+  font-weight: 500;
+}
+
+.delivery-address {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.delivery-address p {
+  margin: 5px 0;
+}
+
+.order-items {
+  margin-bottom: 20px;
+}
+
+.order-items-header {
+  display: grid;
+  grid-template-columns: 2fr 0.7fr 0.7fr 0.7fr;
+  background-color: #f1e6cf; /* page background tint */
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+  font-weight: 500;
+}
+
+.order-item-detail {
+  display: grid;
+  grid-template-columns: 2fr 0.7fr 0.7fr 0.7fr;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.item-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-name img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.order-summary {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.summary-item.total {
+  font-weight: 700;
+  font-size: 18px;
+  color: #e17055; /* warm accent for totals */
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 10px;
+  margin-top: 5px;
+}
+
+@media (max-width: 1024px) {
+  .orders-content {
+    flex-direction: column;
+  }
+  
+  .orders-list-header, .order-item {
+    grid-template-columns: 0.6fr 1fr 1fr 0.6fr 0.6fr 0.8fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .orders-list-header, .order-item {
+    grid-template-columns: 0.6fr 1fr 0.8fr 0.6fr 0.6fr;
+  }
+  
+  .orders-list-header p:nth-child(3), 
+  .order-item p:nth-child(3) {
+    display: none;
+  }
+  
+  .order-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .orders-list-header {
+    display: none;
+  }
+  
+  .order-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  
+  .order-item p:not(:first-child) {
+    font-size: 14px;
+  }
+  
+  .order-items-header, .order-item-detail {
+    grid-template-columns: 1.5fr 0.7fr 0.7fr 0.7fr;
+  }
+}

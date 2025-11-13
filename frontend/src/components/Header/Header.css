@@ -1,0 +1,71 @@
+.header{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 88%;
+    height: 40vw;
+    margin: 10px auto;
+    background-image: url('/header1.png');
+    border-radius: 20px;
+    position: relative;
+}
+.header-contents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 4vw;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 8vw;
+    animation: fadeIn 3s;
+    
+}
+.header-contents h2{
+    font-size: max(4.2vw, 22px);
+    color: #e7c371;
+}
+.header-contents p{
+    font-size: 1vw;
+    font-weight: 400;
+    color: #e7c371;
+}
+.header-contents button{
+    background : black;
+    font-size: 16px;
+    font-weight: 500;
+    color: #e7c371;
+    border: 1px solid #e7c371;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: fadeIn 3s;
+}
+.header-contents button:hover{
+    background: #e7c371;
+    color: black;
+}
+@media (max-width:1050px) {
+    
+    .header{
+        height:38vw;
+    }
+
+    .header-contents{
+        max-width: 45%;
+        
+    }
+}
+@media (max-width:750px) {
+    .header-contents{
+        max-width: 65%;
+    }
+    .header-contents p{
+        display: none;
+    }
+    .header-contents button{
+        padding: 2vw 4vw;
+    }
+}
